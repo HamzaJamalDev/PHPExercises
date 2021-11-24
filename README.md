@@ -19,6 +19,7 @@ variable d'aide **max**.
 
 # Exercice 5
 Créer une page PHP permettant d'afficher, sous forme de **liste non ordonnée**, les **carrés** des nombres **de 1 à 20** selon le format:
+
 ![Exercice 5](screenshots/ex5.png)
 
 # Exercice 6
