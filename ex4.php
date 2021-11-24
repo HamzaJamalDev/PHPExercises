@@ -1,9 +1,9 @@
 <!-- Exercice 4: -->
 <?php
 $helloMessage = "Hello PHP, nous sommes le " . date("d-m-Y");
-$GreetingMessage = "Bonne après midi";
+$greetingMessage = "Bonne après midi";
 if (date("H") < 12)
-    $GreetingMessage = "Bon matin";
+    $greetingMessage = "Bon matin";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ if (date("H") < 12)
         <?= $helloMessage; ?>
     </p>
     <p>
-        <?= $GreetingMessage;?>
+        <?= $greetingMessage;?>
     </p>
 </body>
 
