@@ -74,7 +74,7 @@ if (isset($_GET["btSend"])) {
         if (isset($_GET["gender"])) {
             $gender = htmlspecialchars($_GET["gender"]);
             if (empty($gender)) {
-                $errorGender = "Entrez votre gender!";
+                $errorGender = "Entrez votre sexe!";
                 $validForm = false;
             } else {
                 if (!in_array($gender, $definedGenders)) {
@@ -85,7 +85,7 @@ if (isset($_GET["btSend"])) {
                 }
             }
         } else {
-            $errorGender = "Entrez votre gender!";
+            $errorGender = "Entrez votre sexe!";
             $validForm = false;
         }
 
