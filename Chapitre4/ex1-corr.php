@@ -1,25 +1,26 @@
 <?php
+session_start();
 $message = null;
 $class = null;
-if (!isset($_COOKIE["random"])) {
+if (!isset($_SESSION["random"])) {
     $random = rand(0, 10);
-    setcookie("random", $random);
+    $_SESSION["random"] = $random;
 } else {
-    $rand = htmlspecialchars($_COOKIE["random"]);
+    $rand = htmlspecialchars($_SESSION["random"]);
     $btSend = isset($_GET["btSend"]) ? htmlspecialchars($_GET["btSend"]) : null;
     if ($btSend == "send") {
         $n = isset($_GET["n"]) ? $_GET["n"] : null;
         if ($rand == $n) {
             $message = "Bravo!";
             $class = "alert-success";
-            setcookie("random", "", time() - 60);
+            unset($_SESSION["random"]);
         } else {
             $message = "Reessayer!";
             $class = "alert-danger";
         }
     } elseif ($btSend == "replay") {
         $random = rand(0, 10);
-        setcookie("random", $random);
+        $_SESSION["random"] = $random;
     }
 }
 ?>
@@ -30,7 +31,8 @@ if (!isset($_COOKIE["random"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Game</title>
 </head>
 
@@ -46,7 +48,7 @@ if (!isset($_COOKIE["random"])) {
         <?php
         if ($message) {
         ?>
-            <div class="alert <?= $class;?>">
+            <div class="alert <?= $class; ?>">
                 <p><?= $message; ?></p>
             </div>
         <?php
