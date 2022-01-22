@@ -14,3 +14,5 @@ Réaliser une application pour **deviner** un **nombre aléatoire**.
 3. L'utilisateur peut **jouer à nouveau** en cliquant sur **Réessayer**.
 
 ![Exercice 1-4](screenshots/ex1-4.png)
+
+Réimplémenter le même jeu à l'aide d'une **variable de session** à la place du cookie.
